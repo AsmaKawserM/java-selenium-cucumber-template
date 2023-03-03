@@ -28,6 +28,7 @@ in `test` calls web automation functionalities existing in `main`.
 1. Clone the repository. 
 
 **In main:**
+
 2. Create page classes under `pages`. Make new pages classes to extend `Page` class, which contains commonly used methods 
 to interact with a web page using Selenium. Page classes must receive `AppSession` as an argument in the constructor, which 
 contains the properties for the current session and the `DriverManager`.Then, add the element locators and methods 
@@ -40,6 +41,7 @@ has already some predefined.
 driver files. Modify the `DriverManager` with any other suggested approach from Selenium if required.**
 
 **In test:**
+
 6. Define `test.properties` as required. For each property defined, make sure it is retrieved by `properties.TestProps` 
 class either as mandatory or with a default value. By doing this, properties can be accessed easily from anywhere in the code.
 **Note: test.properties is usually not shared in a repository since it might contain sensitive information like credentials**
