@@ -8,21 +8,29 @@ import pages.Login;
 
 public class PageManager {
 
-    @Getter private Home home;
-    @Getter private Installation installation;
-    @Getter private Login login;
-    @Getter private BasePage basePage;
-//    private AppSession appSession; // Required for lazy initialization
+    private final AppSession appSession;
+    private BasePage basePage;
+    private Home home;
+    private Installation installation;
+    private Login login;
     public PageManager(AppSession appSession){
-
-        basePage = new BasePage(appSession);
-        home = new Home(appSession);
-        login = new Login(appSession);
-        installation = new Installation(appSession);
+        this.appSession = appSession;
     }
 
-    // If required apply lazy loading, example:
-//    public Home getHome() {
-//        return (home == null) ? home = new Home(appSession) : home;
-//    }
+//     Using lazy initialization
+    public BasePage getBasePage() {
+        return (basePage == null) ? basePage = new BasePage(appSession) : basePage;
+    }
+    public Home getHome() {
+        return (home == null) ? home = new Home(appSession) : home;
+    }
+
+    public Installation getInstallation() {
+        return (installation == null) ? installation = new Installation(appSession) : installation;
+    }
+
+    public Login getLogin() {
+        return (login == null) ? login = new Login(appSession) : login;
+    }
+
 }

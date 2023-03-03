@@ -4,8 +4,6 @@ import app.AppSession;
 import app.PageManager;
 import lombok.Getter;
 import lombok.Setter;
-import properties.TestProps;
-
 
 public class TestContext {
     @Getter private AppSession appSession;
