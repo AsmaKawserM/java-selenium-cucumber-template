@@ -1,6 +1,6 @@
 # Cucumber-Selenium Test Automation Framework Template
 This is a complete BDD automation framework template for web functional testing using Java, Cucumber and Selenium.
-It is based on the Page Object model, and it provides all the required pieces to start writing page classes and tests cases.
+It is based on the Page Object model, and it provides all the required pieces to start creating page classes and tests cases.
 
 Even though I intended to make this template as complete as possible, it is susceptible to improvements and modifications 
 based on your experience and requirements. I just wanted to share an approach that has worked for me on several projects. 
