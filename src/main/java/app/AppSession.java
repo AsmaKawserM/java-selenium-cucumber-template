@@ -5,10 +5,8 @@ import lombok.Setter;
 
 public class AppSession {
 
-    private static int DEFAULT_DEFAULT_TIMEOUT = 10;
-    private static int DEFAULT_EXTENDED_TIMEOUT = 60;
-    @Getter @Setter private int defaultTimeout = DEFAULT_DEFAULT_TIMEOUT;
-    @Getter @Setter private int extendedTimeout = DEFAULT_EXTENDED_TIMEOUT;
+    @Getter @Setter private int defaultTimeout = 10;
+    @Getter @Setter private int extendedTimeout = 60;
     @Getter private String baseUrl;
     @Getter private DriverManager driverManager;
 

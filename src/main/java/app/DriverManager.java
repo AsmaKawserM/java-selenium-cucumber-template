@@ -53,27 +53,25 @@ public class DriverManager {
         return webDriver;
     }
 
-    public static WebDriver getChromeDriver() {
+    public WebDriver getChromeDriver() {
         final ChromeOptions chromeOptions = new ChromeOptions();
-        String capability = ChromeOptions.CAPABILITY;
 
-        //Arguments: https://peter.sh/experiments/chromium-command-line-switches/
-//        chromeOptions.addArguments("user-data-dir=/path/to/custom/profile");
-//        chromeOptions.addArguments("start-maximized");
+        // Arguments: https://peter.sh/experiments/chromium-command-line-switches/
+        // chromeOptions.addArguments("user-data-dir=/path/to/custom/profile");
+        // chromeOptions.addArguments("start-maximized");
 
         //Preferences: https://chromium.googlesource.com/chromium/src/+/master/chrome/common/pref_names.cc
         HashMap<String, Object> chromePrefs = new HashMap<>();
-//        chromePrefs.put("profile.default_content_settings.popups", 0);
-//        chromePrefs.put("download.default_directory", "/new/download/path");
+        // chromePrefs.put("profile.default_content_settings.popups", 0);
+        // chromePrefs.put("download.default_directory", "/new/download/path");
         chromeOptions.setExperimentalOption("prefs", chromePrefs);
 
         ChromeDriver chromeDriver = new ChromeDriver(chromeOptions);
         System.out.println(String.format("Driver session: %s", chromeDriver.getSessionId()));
         return chromeDriver;
-
     }
 
-    private static WebDriver getEdgeDriver() {
+    private WebDriver getEdgeDriver() {
         final EdgeOptions edgeOptions = new EdgeOptions();
 
         //Arguments:
@@ -90,7 +88,7 @@ public class DriverManager {
         return edgeDriver;
     }
 
-    private static WebDriver getFirefoxDriver(){
+    private WebDriver getFirefoxDriver(){
         final FirefoxOptions firefoxOptions = new FirefoxOptions();
         final FirefoxProfile firefoxProfile = new FirefoxProfile();
 
@@ -106,7 +104,7 @@ public class DriverManager {
         return firefoxDriver;
     }
 
-    private static WebDriver getSafariDriver(){
+    private WebDriver getSafariDriver(){
         SafariDriver safariDriver = new SafariDriver();
 
         // Add arguments and preferences

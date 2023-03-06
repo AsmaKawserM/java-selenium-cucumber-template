@@ -19,4 +19,5 @@ public class TestProps {
     public static final String BROWSER = Utils.getPropertyOrDefault("browser",TEST_PROPERTIES_FILE,"chrome");
     public static final int DEFAULT_TIMEOUT = Utils.getPropertyOrDefault("defaultTimeout",TEST_PROPERTIES_FILE,10);
     public static final int EXTENDED_TIMEOUT = Utils.getPropertyOrDefault("extendedTimeout",TEST_PROPERTIES_FILE,60);
+
 }

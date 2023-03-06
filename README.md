@@ -7,13 +7,12 @@ based on your experience and requirements. I just wanted to share an approach th
 I hope you find it helpful.
 
 ## Requirements
-- Java SDK
+- Java JDK (11+)
 - Maven
 
 ## Main Libraries
 - Cucumber-7 with Junit-5
 - Selenium 4.8
-
 
 ## Project Structure Overview
 The project contains 2 major modules: 
