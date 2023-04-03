@@ -1,10 +1,7 @@
 package app;
 
 import lombok.Getter;
-import pages.BasePage;
-import pages.Home;
-import pages.Installation;
-import pages.Login;
+import pages.*;
 
 public class PageManager {
 
@@ -13,6 +10,9 @@ public class PageManager {
     private Home home;
     private Installation installation;
     private Login login;
+    private Product product;
+    private Cart cart;
+    private Checkout checkout;
     public PageManager(AppSession appSession){
         this.appSession = appSession;
     }
@@ -33,5 +33,18 @@ public class PageManager {
         return (login == null) ? login = new Login(appSession) : login;
     }
 
+    public Product getProduct(){
+        return (product == null) ? product = new Product(appSession) : product;
+
+    }
+    public Cart getCart(){
+        return (cart == null) ? cart = new Cart(appSession) : cart;
+
+    }
+
+    public Checkout getCheckout(){
+        return (checkout == null) ? checkout = new Checkout(appSession) : checkout;
+
+    }
 }
 

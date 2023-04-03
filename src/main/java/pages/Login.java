@@ -2,27 +2,50 @@ package pages;
 
 import app.AppSession;
 import org.openqa.selenium.By;
+import org.openqa.selenium.UsernameAndPassword;
+import org.openqa.selenium.WebDriver;
 
-public class Login extends BasePage{
+import java.util.NoSuchElementException;
 
-    private static final String PAGE_PATH = "/users/sign_in";
+public class Login{
+    WebDriver driver;
+    AppSession appSession;
 
-    private static final By EMAIL_INPUT = By.id("user_email");
-    private static final By PASSWORD_INPUT = By.id("user_password");
-    private static final By SIGN_IN_BUTTON = By.cssSelector("input[name='commit']");
-    private static final By ERROR_MESSAGE = By.cssSelector("div.ht-alert__content p");
+    // Elements
+    // username field
+    private final By USERNAME_INPUT = By.cssSelector("form[action='/login'] input[type='email']");
+    // password field
+    private final By PASSWORD_INPUT = By.cssSelector("form[action='/login'] input[type='password']");
+    // login button
+    private final By LOGIN_BUTTON = By.cssSelector("form[action='/login'] button[type='submit']");
 
     public Login(AppSession appSession){
-        super(appSession);
+        driver = appSession.getDriverManager().getDriver();
     }
 
     public void attemptToLogin(String username, String password){
-        enterText(EMAIL_INPUT, username);
-        enterText(PASSWORD_INPUT, password);
-        clickElement(SIGN_IN_BUTTON);
+       // Enter username
+    driver.findElement(USERNAME_INPUT).sendKeys(username);
+        //Enter password
+    driver.findElement(PASSWORD_INPUT).sendKeys(password);
+
+
+        //Click Login
+        driver.findElement(LOGIN_BUTTON).click();
     }
 
-    public String getErrorMessage(){
-        return element(ERROR_MESSAGE).getText();
+    public void attemptToUnsuccessfulLogin(String username, String password){
+        // Enter username
+        driver.findElement(USERNAME_INPUT).sendKeys(username);
+        //Enter password
+        driver.findElement(PASSWORD_INPUT).sendKeys(password);
+
+
+        //Click Login
+        driver.findElement(LOGIN_BUTTON).click();
     }
+
+
+
+
 }

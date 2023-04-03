@@ -11,6 +11,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.io.File;
 import java.util.HashMap;
 
 public class DriverManager {
@@ -59,7 +60,11 @@ public class DriverManager {
         // Arguments: https://peter.sh/experiments/chromium-command-line-switches/
         // chromeOptions.addArguments("user-data-dir=/path/to/custom/profile");
         // chromeOptions.addArguments("start-maximized");
+        chromeOptions.addArguments("--remote-allow-origins=*");
+        //Ad Blocker
+        chromeOptions.addExtensions(new File("C:\\Users\\afawzia\\Documents\\GitHub\\java-selenium-cucumber-template\\src\\main\\java\\app\\addBlocker\\gighmmpiobklfepjocnamgkkbiglidom-5.4.1-Crx4Chrome.com.crx"));
 
+        //
         //Preferences: https://chromium.googlesource.com/chromium/src/+/master/chrome/common/pref_names.cc
         HashMap<String, Object> chromePrefs = new HashMap<>();
         // chromePrefs.put("profile.default_content_settings.popups", 0);
